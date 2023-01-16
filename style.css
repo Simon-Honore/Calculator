@@ -1,0 +1,106 @@
+/* ========= variables =========== */
+:root {
+  --color-dark: #2c2b2b;
+  --color-orange: #da8422;
+  --color-grey-light: #d2dedf;
+  --color-grey-dark: #7e898a;
+  --color-green: #18b83b;
+  --font: 'Pacifico', cursive;
+  --font-screen: 'Orbitron', sans-serif;
+  --font-keys: 'Secular One', sans-serif;
+  --gutter: 0.8rem;
+}
+
+
+body {
+  background: no-repeat cover var(--color-grey-light);
+  background: -moz-linear-gradient(-45deg, var(--color-grey-light) 0%, var(--color-green) 50%, var(--color-grey-dark) 100%);
+  background: -webkit-linear-gradient(-45deg, var(--color-grey-light) 0%, var(--color-green) 50%, var(--color-grey-dark) 100%);
+  background: linear-gradient(135deg, var(--color-grey-light) 0%, var(--color-green) 50%, var(--color-grey-dark) 100%);
+  min-height: 100vh;
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+}
+
+.calculator {
+  width: 350px;
+  background-color: var(--color-dark);
+  padding: 1rem 1.6rem;
+  border-radius: var(--gutter);
+  text-align: center;
+}
+
+.header-title {
+  font-size: 1.6rem;
+}
+
+.screen {
+  height: 5rem;
+  width: 100%;
+  background-color: var(--color-grey-dark);
+  color: var(--color-dark);
+  padding: var(--gutter);
+  margin: var(--gutter) 0;
+  border-radius: var(--gutter);
+  border: 2px solid var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-family: var(--font-screen);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 50px);
+  grid-gap: var(--gutter);
+  margin: 1.6rem 0;
+}
+
+.btn {
+  font-family: var(--font-keys);
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--color-grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.btn-alt {
+  padding-top: var(--gutter);
+}
+
+.btn-operato {
+  background-color: var(--color-grey-dark);
+  color: var(--color-grey-light);
+}
+
+.btn-reset {
+  background-color: var(--color-orange);
+  color: var(--color-grey-light);
+}
+
+.btn-enter {
+  background-color: var(--color-green);
+  color: var(--color-grey-light);
+}
+
+.footer-list {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: var(--gutter) 0;
+}
+
+.footer-link {
+  color: var(--color-orange);
+}

@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <title>Calculator</title>
+  <!-- incons on https://fontawesome.com -->
+  <script src="https://kit.fontawesome.com/95ff24173e.js" crossorigin="anonymous"></script>
+  <!-- fonts on https://fonts.google.com/ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Pacifico&family=Secular+One&display=swap"
+    rel="stylesheet">
+
 </head>
+
 <body>
+  <div class="calculator">
+    <header class="header">
+      <h1 class="header-title">Calculator</h1>
+    </header>
+
+    <main class="main">
+      <div class="screen">436.64</div>
+
+      <div class="keys">
+        <button class="btn btn-reset">C</button>
+        <button class="btn btn-operato">(</button>
+        <button class="btn btn-operato">)</button>
+        <button class="btn btn-operato">/</button>
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn btn-alt btn-operato">*</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn btn-operato">-</button>
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn btn-operato">+</button>
+        <button class="btn">0</button>
+        <button class="btn">.</button>
+        <button class="btn btn-enter">=</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer-text">
+        Créé par Simon Honoré &#169; 2023
+      </p>
+      <ul class="footer-list">
+        <li><a class="footer-link" href='#'><i class="fa-brands fa-github fa-xl"></i></a></li>
+        <li><a class="footer-link" href='#'><i class="fa-brands fa-linkedin fa-xl"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+
   <script src="app.js"></script>
 </body>
+
 </html>
