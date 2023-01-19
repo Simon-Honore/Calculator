@@ -15,7 +15,7 @@ const app = {
         // supprime le focus sur la touche
         // pour que en appuyant sur entré, cela ne valide pas la touche à nouveau
         keyElmt.blur()
-        app.embegToScreen(value);
+        app.embedToScreen(value);
       })
     });
 
