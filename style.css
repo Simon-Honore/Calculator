@@ -62,7 +62,7 @@ body {
   margin: 1.6rem 0;
 }
 
-.btn {
+.key {
   font-family: var(--font-keys);
   font-size: 2rem;
   font-weight: bold;
@@ -73,23 +73,24 @@ body {
   color: var(--color-orange);
   border: none;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.btn-alt {
+.key-alt {
   padding-top: var(--gutter);
 }
 
-.btn-operato {
+.key-operato {
   background-color: var(--color-grey-dark);
   color: var(--color-grey-light);
 }
 
-.btn-reset {
+.key-reset {
   background-color: var(--color-orange);
   color: var(--color-grey-light);
 }
 
-.btn-enter {
+.key-enter {
   background-color: var(--color-green);
   color: var(--color-grey-light);
 }
