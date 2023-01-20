@@ -4,7 +4,8 @@ const app = {
     app.allEventListner();
   },
 
-  allEventListner: () => {453
+  allEventListner: () => {
+    453
     // recuperation de toutes les keys
     const keysElmt = document.querySelectorAll('.key');
     // pour chaque key, on met un ecouteur au click
@@ -42,22 +43,25 @@ const app = {
         case 'C':
           screenElmt.textContent = '';
           break;
+
         // total
         case 'Enter':
         case '=':
           const result = eval(screenElmt.textContent);
           screenElmt.textContent = '';
-          screenElmt.textContent = result;
+          screenElmt.textContent = result; // TODO - mettre un mathround pour arondir après la virgule à 6 chiffres 
           break;
+
         // retour
         case '⌫':
         case 'Backspace':
           const currentValue = screenElmt.textContent;
           console.log('CURRENT VALUE', currentValue)
-          const newCurrentValue = currentValue.substring(0, currentValue.length -1 );
+          const newCurrentValue = currentValue.substring(0, currentValue.length - 1);
           console.log('NEW CURRENT VALUE', newCurrentValue)
           screenElmt.textContent = newCurrentValue;
           break;
+
         default:
           screenElmt.textContent += value;
       }
