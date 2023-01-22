@@ -1,3 +1,6 @@
+/* ===== import Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:wght@500&family=Secular+One&display=swap');
+
 /* ========= variables =========== */
 :root {
   --color-dark: #2c2b2b;
@@ -6,8 +9,8 @@
   --color-grey-dark: #7e898a;
   --color-green: #18b83b;
   --font: 'Pacifico', cursive;
-  --font-screen: 'Orbitron', sans-serif;
   --font-keys: 'Secular One', sans-serif;
+  --font-screen: 'Roboto Mono', monospace;
   --gutter: 0.8rem;
 }
 
@@ -40,7 +43,7 @@ body {
 .header-msg {
   font-family: var(--font-screen);
   color: tomato;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -62,7 +65,7 @@ body {
   justify-content: end;
   font-family: var(--font-screen);
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   overflow: hidden;
 }
 
@@ -117,3 +120,52 @@ body {
 .footer-link {
   color: var(--color-orange);
 }
+
+/* === responsive ===  */
+@media screen and (max-width: 450px) and (orientation: portrait) {
+  .calculator {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .main {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-height: 563px) and (orientation: landscape) {
+  .calculator {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .main {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .screen {
+    width: 60%;
+    margin-block: 4rem;
+  }
+
+  .keys {
+    width: 35%;
+  }
+
+  .footer {
+    position: absolute;
+    left: 15%;
+    bottom: 4rem;
+  }
+};

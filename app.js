@@ -5,28 +5,31 @@ const app = {
   },
 
   allEventListner: () => {
-    // recuperation de toutes les keys
+    // ajout d'un ecouteur sur toutes les touches
     const keysElmt = document.querySelectorAll('.key');
-    // pour chaque key, on met un ecouteur au click
     keysElmt.forEach(keyElmt => {
       keyElmt.addEventListener('click', (event) => {
         const value = event.target.textContent;
-        console.log(value);
+
         // supprime le focus sur la touche
         // pour que en appuyant sur entré, cela ne valide pas la touche à nouveau
-        keyElmt.blur()
+        keyElmt.blur();
+
         app.handleCalculator(value);
-      })
+      });
     });
 
     // et un ecouteur sur le clavier
     document.addEventListener('keyup', (event) => {
       const value = event.key;
-      console.log(value)
       app.handleCalculator(value);
-    })
+    });
   },
 
+  /**
+   * 
+   * @param {string} value - touche appuyée ou cliquée
+   */
   handleCalculator: (value) => {
     //création d'un tableau avec toutes les touches de la calculatrice 
     const keysElmt = [...document.querySelectorAll('.key')];
@@ -54,9 +57,7 @@ const app = {
         case '⌫':
         case 'Backspace':
           const currentValue = screenElmt.textContent;
-          console.log('CURRENT VALUE', currentValue)
           const newCurrentValue = currentValue.substring(0, currentValue.length - 1);
-          console.log('NEW CURRENT VALUE', newCurrentValue)
           screenElmt.textContent = newCurrentValue;
           break;
 
@@ -64,6 +65,7 @@ const app = {
           screenElmt.textContent += value;
       };
     };
+
     app.handleErrors();
   },
 
@@ -86,24 +88,30 @@ const app = {
       } else {
         app.closeErrorMsg();
       };
-    })
-},
-
-  errorMessage: (message) => {
-    const headerMsgElmt = document.querySelector('.header-msg');
-headerMsgElmt.textContent = message;
+    });
   },
 
-showErrorMsg: () => {
-  const headerTitleElmt = document.querySelector('.header-title');
-  headerTitleElmt.classList.add('hidden');
-  const headerMsgElmt = document.querySelector('.header-msg');
-  headerMsgElmt.classList.remove('hidden');
-},
+  /**
+   * 
+   * @param {string} message - message d'erreur
+   */
+  errorMessage: (message) => {
+    const headerMsgElmt = document.querySelector('.header-msg');
+    headerMsgElmt.textContent = message;
+  },
+
+  showErrorMsg: () => {
+    const headerTitleElmt = document.querySelector('.header-title');
+    headerTitleElmt.classList.add('hidden');
+
+    const headerMsgElmt = document.querySelector('.header-msg');
+    headerMsgElmt.classList.remove('hidden');
+  },
 
   closeErrorMsg: () => {
     const headerTitleElmt = document.querySelector('.header-title');
     headerTitleElmt.classList.remove('hidden');
+
     const headerMsgElmt = document.querySelector('.header-msg');
     headerMsgElmt.classList.add('hidden');
   },
