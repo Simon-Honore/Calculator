@@ -5,7 +5,6 @@ const app = {
   },
 
   allEventListner: () => {
-    453
     // recuperation de toutes les keys
     const keysElmt = document.querySelectorAll('.key');
     // pour chaque key, on met un ecouteur au click
@@ -16,7 +15,7 @@ const app = {
         // supprime le focus sur la touche
         // pour que en appuyant sur entré, cela ne valide pas la touche à nouveau
         keyElmt.blur()
-        app.embedToScreen(value);
+        app.handleCalculator(value);
       })
     });
 
@@ -24,11 +23,11 @@ const app = {
     document.addEventListener('keyup', (event) => {
       const value = event.key;
       console.log(value)
-      app.embedToScreen(value);
+      app.handleCalculator(value);
     })
   },
 
-  embedToScreen: (value) => {
+  handleCalculator: (value) => {
     //création d'un tableau avec toutes les touches de la calculatrice 
     const keysElmt = [...document.querySelectorAll('.key')];
     const keysList = keysElmt.map(keyElmt => keyElmt.textContent);
@@ -48,8 +47,7 @@ const app = {
         case 'Enter':
         case '=':
           const result = eval(screenElmt.textContent);
-          screenElmt.textContent = '';
-          screenElmt.textContent = result; // TODO - mettre un mathround pour arondir après la virgule à 6 chiffres 
+          screenElmt.textContent = Math.round(result * 100) / 100;
           break;
 
         // retour
@@ -64,11 +62,51 @@ const app = {
 
         default:
           screenElmt.textContent += value;
-      }
-    }
-  }
+      };
+    };
+    app.handleErrors();
+  },
 
+  handleErrors: () => {
+    const screenElmt = document.querySelector('.screen');
 
+    // gestion du nombre de caractères max
+    if (screenElmt.textContent.length > 13) {
+      app.errorMessage('Error - trop de caractères');
+      app.showErrorMsg();
+    } else {
+      app.closeErrorMsg();
+    };
+
+    // gestion d'erreur de syntax 
+    window.addEventListener('error', (event) => {
+      if (event.message.includes('SyntaxError')) {
+        app.errorMessage('Error - 2 opérateurs à suivre');
+        app.showErrorMsg();
+      } else {
+        app.closeErrorMsg();
+      };
+    })
+},
+
+  errorMessage: (message) => {
+    const headerMsgElmt = document.querySelector('.header-msg');
+headerMsgElmt.textContent = message;
+  },
+
+showErrorMsg: () => {
+  const headerTitleElmt = document.querySelector('.header-title');
+  headerTitleElmt.classList.add('hidden');
+  const headerMsgElmt = document.querySelector('.header-msg');
+  headerMsgElmt.classList.remove('hidden');
+},
+
+  closeErrorMsg: () => {
+    const headerTitleElmt = document.querySelector('.header-title');
+    headerTitleElmt.classList.remove('hidden');
+    const headerMsgElmt = document.querySelector('.header-msg');
+    headerMsgElmt.classList.add('hidden');
+  },
 }
 
 document.addEventListener('DOMContentLoaded', app.init);

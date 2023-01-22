@@ -37,6 +37,17 @@ body {
   font-size: 1.6rem;
 }
 
+.header-msg {
+  font-family: var(--font-screen);
+  color: tomato;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
 .screen {
   height: 5rem;
   width: 100%;
@@ -52,6 +63,7 @@ body {
   font-family: var(--font-screen);
   font-weight: bold;
   font-size: 1.6rem;
+  overflow: hidden;
 }
 
 .keys {
