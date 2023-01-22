@@ -26,7 +26,7 @@ Une calculatrice qui fonctionne au clique, mais aussi avec le clavier, le tout e
 
 2 gestions d'erreues:
 
-- Si trop de chiffre pour l'écran
+- Si trop de chiffres pour l'écran
   - le surplus est gérer en overflow hidden donc toujours pris en compte au besoin 
   - un message est affiché pour signaler qu'il y a trop de caractères
 - Si deux opérateurs à la suite, au demande du total
