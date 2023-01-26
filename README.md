@@ -1,5 +1,7 @@
 # Calculator
 
+https://simon-honore.github.io/Calculator/
+
 Une calculatrice qui fonctionne au clique, mais aussi avec le clavier, le tout en responsive.
 
 ## Technos 

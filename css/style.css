@@ -53,6 +53,7 @@ body {
 
 .screen {
   height: 5rem;
+  min-height: 4rem;
   width: 100%;
   background-color: var(--color-grey-dark);
   color: var(--color-dark);
@@ -72,7 +73,7 @@ body {
 .keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 50px);
+  grid-template-rows: repeat(5, 1fr);
   grid-gap: var(--gutter);
   margin: 1.6rem 0;
 }
@@ -122,7 +123,7 @@ body {
 }
 
 /* === responsive ===  */
-@media screen and (max-width: 450px) and (orientation: portrait) {
+@media only screen and (max-width: 450px) and (orientation: portrait) {
   .calculator {
     width: 100vw;
     height: 100vh;
@@ -137,6 +138,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .key {
+    font-size: 1.6rem;
   }
 }
 
@@ -161,6 +166,10 @@ body {
 
   .keys {
     width: 35%;
+  }
+
+  .key {
+    font-size: 1.6rem;
   }
 
   .footer {
