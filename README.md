@@ -32,4 +32,4 @@ Une calculatrice qui fonctionne au clic, mais aussi avec le clavier, le tout en 
   - le surplus est géré en ```overflow: hidden```, donc toujours pris en compte au besoin 
   - un message est affiché pour signaler qu'il y a trop de caractères
 - Si deux opérateurs à la suite, au demande du total
-  - un message est affiché pour signaer qu'il y a 2 opérateurs
+  - un message est affiché pour signaler qu'il y a 2 opérateurs
