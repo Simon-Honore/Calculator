@@ -2,7 +2,7 @@
 
 https://simon-honore.github.io/Calculator/
 
-Une calculatrice qui fonctionne au clique, mais aussi avec le clavier, le tout en responsive.
+Une calculatrice qui fonctionne au clic, mais aussi avec le clavier, le tout en responsive.
 
 ## Technos 
 
@@ -12,7 +12,7 @@ Une calculatrice qui fonctionne au clique, mais aussi avec le clavier, le tout e
 
 ## Fonctions
 
-- fonctionne au clique sur les touches
+- fonctionne au clic sur les touches
 - fonctionne avec le clavier 
 - additions
 - soustractions
@@ -22,14 +22,14 @@ Une calculatrice qui fonctionne au clique, mais aussi avec le clavier, le tout e
 - backspace
 - reset
 - total
-  - arrondi 2 décimals
+  - arrondi 2 décimales
 
-## Gestions d'erreur
+## Gestions d'erreurs
 
-2 gestions d'erreues:
+2 gestions d'erreurs:
 
 - Si trop de chiffres pour l'écran
-  - le surplus est gérer en overflow hidden donc toujours pris en compte au besoin 
+  - le surplus est géré en ```overflow: hidden```, donc toujours pris en compte au besoin 
   - un message est affiché pour signaler qu'il y a trop de caractères
 - Si deux opérateurs à la suite, au demande du total
-  - un message est affiché pour signalé qu'il y a 2 opérateurs
+  - un message est affiché pour signaler qu'il y a 2 opérateurs
