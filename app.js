@@ -74,7 +74,7 @@ const app = {
 
     // gestion du nombre de caractères max
     if (screenElmt.textContent.length > 13) {
-      app.errorMessage('Error - trop de caractères');
+      app.errorMessage('Erreur - trop de caractères');
       app.showErrorMsg();
     } else {
       app.closeErrorMsg();
@@ -82,8 +82,8 @@ const app = {
 
     // gestion d'erreur de syntax 
     window.addEventListener('error', (event) => {
-      if (event.message.includes('SyntaxError')) {
-        app.errorMessage('Error - 2 opérateurs à suivre');
+      if (event.message.includes('Script error')) {
+        app.errorMessage('Erreur - 2 opérateurs à suivre');
         app.showErrorMsg();
       } else {
         app.closeErrorMsg();
